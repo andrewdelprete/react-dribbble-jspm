@@ -1,7 +1,9 @@
 import React from 'react'
 import Router from 'react-router'
-import Dribbble from './components/Dribbble.jsx!'
 import Home from './components/Home.jsx!'
+import { PopularWrapper } from './views/Popular.view.jsx!'
+import { DebutsWrapper } from './views/Debuts.view.jsx!'
+import { EveryoneWrapper } from './views/Everyone.view.jsx!'
 import Data from './data';
 
 var { navItems } = Data;
@@ -57,23 +59,11 @@ var Header = React.createClass({
     }
 });
 
-/**
- * Allows us to pass properties through to our Dribbble handler component
- * @param {string} listType
- */
-function DribbbleWrapper(listType, pageTitle) {
-  return React.createClass({
-    render: function() {
-      return ( <Dribbble listType={ listType } pageTitle={ pageTitle } /> )
-    }
-  });
-}
-
 var routes = (
     <Route handler={App}>
-        <Route name="popular" path="/popular" handler={ DribbbleWrapper("popular", "Popular") } />
-        <Route name="debuts" path="/debuts" handler={ DribbbleWrapper("debuts", "Debuts") } />
-        <Route name="everyone" path="/everyone" handler={ DribbbleWrapper("everyone", "Everyone") } />
+        <Route name="popular" path="/popular" handler={ PopularWrapper("Popular") } />
+        <Route name="debuts" path="/debuts" handler={ DebutsWrapper("Debuts") } />
+        <Route name="everyone" path="/everyone" handler={ EveryoneWrapper("Everyone") } />
         <DefaultRoute name="home" handler={ Home } />
     </Route>
 );
