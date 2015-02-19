@@ -2,7 +2,7 @@ import React from 'react'
 import DribbbleApi from '../services/DribbbleApi'
 import { DribbbleItems } from '../components/Dribbble.jsx!'
 
-var Popular = React.createClass({
+var PopularView = React.createClass({
     displayName : 'Popular',
 
     getInitialState: function() {
@@ -30,12 +30,12 @@ var Popular = React.createClass({
     }    
 });
 
-var PopularWrapper = function(pageTitle) {
+var PopularViewWrapper = function(pageTitle) {
     return React.createClass({
         render: function() {
-            return ( <Popular pageTitle={ pageTitle } /> )
+            return ( <PopularView pageTitle={ pageTitle } /> )
         }
     });
 }
 
-export { PopularWrapper, Popular }
+export { PopularViewWrapper, PopularView }

@@ -2,7 +2,7 @@ import React from 'react'
 import DribbbleApi from '../services/DribbbleApi'
 import { DribbbleItems } from '../components/Dribbble.jsx!'
 
-var Debuts = React.createClass({
+var DebutsView = React.createClass({
     displayName : 'Debuts',
 
     getInitialState: function() {
@@ -30,12 +30,12 @@ var Debuts = React.createClass({
     }    
 });
 
-var DebutsWrapper = function(pageTitle) {
+var DebutsViewWrapper = function(pageTitle) {
     return React.createClass({
         render: function() {
-            return ( <Debuts pageTitle={ pageTitle } /> )
+            return ( <DebutsView pageTitle={ pageTitle } /> )
         }
     });
 }
 
-export { DebutsWrapper, Debuts }
+export { DebutsViewWrapper, DebutsView }

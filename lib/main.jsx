@@ -1,9 +1,10 @@
 import React from 'react'
 import Router from 'react-router'
 import Home from './components/Home.jsx!'
-import { PopularWrapper } from './views/Popular.view.jsx!'
-import { DebutsWrapper } from './views/Debuts.view.jsx!'
-import { EveryoneWrapper } from './views/Everyone.view.jsx!'
+import { PopularViewWrapper } from './views/Popular.view.jsx!'
+import { DebutsViewWrapper } from './views/Debuts.view.jsx!'
+import { EveryoneViewWrapper } from './views/Everyone.view.jsx!'
+import { ShotViewWrapper } from './views/Shot.view.jsx!'
 import Data from './data';
 
 var { navItems } = Data;
@@ -61,9 +62,10 @@ var Header = React.createClass({
 
 var routes = (
     <Route handler={App}>
-        <Route name="popular" path="/popular" handler={ PopularWrapper("Popular") } />
-        <Route name="debuts" path="/debuts" handler={ DebutsWrapper("Debuts") } />
-        <Route name="everyone" path="/everyone" handler={ EveryoneWrapper("Everyone") } />
+        <Route name="popular" path="/popular" handler={ PopularViewWrapper("Popular") } />
+        <Route name="debuts" path="/debuts" handler={ DebutsViewWrapper("Debuts") } />
+        <Route name="everyone" path="/everyone" handler={ EveryoneViewWrapper("Everyone") } />
+        <Route name="shot" path="/shot/:shotId" handler={ ShotViewWrapper() } />
         <DefaultRoute name="home" handler={ Home } />
     </Route>
 );

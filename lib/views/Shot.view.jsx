@@ -1,16 +1,18 @@
 import React from 'react'
 import DribbbleApi from '../services/DribbbleApi'
-import { DribbbleItems } from '../components/Dribbble.jsx!'
+import Router from 'react-router'
+import { DribbbleShot } from '../components/Dribbble.jsx!'
 
-var EveryoneView = React.createClass({
-    displayName : 'Everyone',
+var ShotView = React.createClass({
+    displayName : 'Shot',
+    mixins : [ Router.State ],
 
     getInitialState: function() {
         return { shots: null }
     },
 
     componentWillMount: function() {
-        DribbbleApi.getByListType('everyone').then((data) => {
+        DribbbleApi.getShotById(this.getParams().shotId).then((data) => {
             if (this.isMounted()) {
                 this.setState(data)
             }
@@ -20,8 +22,8 @@ var EveryoneView = React.createClass({
     render: function() {
         var tpl = (
             <div className="container">
-                <h2 className="text-center">{ this.props.pageTitle }</h2>
-                <DribbbleItems shots={ this.state.shots } />
+                <h2 className="text-center">{ this.state.title }</h2>
+                <DribbbleShot shot={ this.state } />
             </div>
         )
         
@@ -30,12 +32,12 @@ var EveryoneView = React.createClass({
     }    
 });
 
-var EveryoneViewWrapper = function(pageTitle) {
+var ShotViewWrapper = function() {
     return React.createClass({
         render: function() {
-            return ( <EveryoneView pageTitle={ pageTitle } /> )
+            return ( <ShotView /> )
         }
     });
 }
 
-export { EveryoneViewWrapper, EveryoneView }
+export { ShotViewWrapper, ShotView }

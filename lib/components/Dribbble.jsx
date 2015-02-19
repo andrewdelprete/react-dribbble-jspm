@@ -1,5 +1,8 @@
 import React from 'react'
+import Router from 'react-router'
 import DribbbleApi from '../services/DribbbleApi'
+
+var { Route, DefaultRoute, RouteHandler, Link } = Router;
 
 var DribbbleItems = React.createClass({
     displayName : 'DribbbleItems',
@@ -13,7 +16,7 @@ var DribbbleItems = React.createClass({
                 }
 
                 item = ( 
-                    <a className="item" href={ item.url } target="_blank" style={ bgi } key={ i }></a>
+                    <Link className="item" to="shot" params={{ shotId: item.id }} style={ bgi } key={ i }></Link>
                 );
 
                 return item;
@@ -30,4 +33,24 @@ var DribbbleItems = React.createClass({
     }
 })
 
-export { DribbbleItems }
+var DribbbleShot = React.createClass({
+    displayName : 'DribbbleShot',
+    render: function() {
+        return (
+            <div className="row">
+                <div className="small-12 medium-6 columns">
+                    <div className="Shot__image">
+                        <img src={ this.props.shot.image_url } />
+                    </div>
+                </div>
+                <div className="small-12 medium-6 columns">
+                    <div className="Shot__description">
+                        <p dangerouslySetInnerHTML={{__html: this.props.shot.description  }}></p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+})
+
+export { DribbbleItems, DribbbleShot }
