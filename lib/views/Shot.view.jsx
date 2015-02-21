@@ -8,7 +8,7 @@ var ShotView = React.createClass({
     mixins : [ Router.State ],
 
     getInitialState: function() {
-        return { shots: null }
+        return { player: {} }
     },
 
     componentWillMount: function() {

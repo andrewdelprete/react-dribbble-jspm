@@ -4,8 +4,7 @@
 #### JSPM Version
 To run the react app locally with JSPM / SystemJS via ```live-server```
 
-    npm install
-    npm install jspm
+    npm install jspm -g
 
     jspm install
 
@@ -17,6 +16,9 @@ To run the react app locally with JSPM / SystemJS via ```live-server```
 To run the react app locally via ```gulp-connect```
 
     npm install
+
+    mkdir dist
+
     gulp
 
     visit http://localhost:1337 to see the running app

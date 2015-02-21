@@ -35,6 +35,7 @@ var DribbbleItems = React.createClass({
 
 var DribbbleShot = React.createClass({
     displayName : 'DribbbleShot',
+
     render: function() {
         return (
             <div className="row">
@@ -44,6 +45,12 @@ var DribbbleShot = React.createClass({
                     </div>
                 </div>
                 <div className="small-12 medium-6 columns">
+                    <div className="Shot__player">
+                        <p>{ this.props.shot.player.created_at }</p>
+                        <p><img src={ this.props.shot.player.avatar_url } width="64" height="64" /></p>
+                        <p>{ this.props.shot.player.name } | <a href={ this.props.shot.player.url }>{ this.props.shot.player.username }</a></p>
+                        <p>{ this.props.shot.player.location }</p>
+                    </div>
                     <div className="Shot__description">
                         <p dangerouslySetInnerHTML={{__html: this.props.shot.description  }}></p>
                     </div>
