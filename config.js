@@ -14,6 +14,7 @@ System.config({
     "lodash": "npm:lodash@3.2.0",
     "react": "npm:react@0.12.2",
     "react-router": "npm:react-router@0.12.0",
+    "react-time": "npm:react-time@2.4.0",
     "reflux": "npm:reflux@0.2.5",
     "github:floatdrop/plugin-jsx@0.1.1": {
       "react-tools": "npm:react-tools@0.12.2"
@@ -22,7 +23,7 @@ System.config({
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.0.2"
+      "buffer": "npm:buffer@3.0.3"
     },
     "github:jspm/nodelibs-constants@0.1.0": {
       "constants-browserify": "npm:constants-browserify@0.0.1"
@@ -115,6 +116,11 @@ System.config({
       "stream": "github:jspm/nodelibs-stream@0.1.0"
     },
     "npm:buffer@3.0.2": {
+      "base64-js": "npm:base64-js@0.0.8",
+      "ieee754": "npm:ieee754@1.1.4",
+      "is-array": "npm:is-array@1.0.1"
+    },
+    "npm:buffer@3.0.3": {
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.4",
       "is-array": "npm:is-array@1.0.1"
@@ -303,6 +309,9 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:moment@2.9.0": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
     "npm:native-promise-only@0.7.6-a": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.1",
@@ -352,6 +361,11 @@ System.config({
     "npm:react-router@0.12.0": {
       "process": "github:jspm/nodelibs-process@0.1.1",
       "qs": "npm:qs@2.3.3",
+      "react": "npm:react@0.12.2"
+    },
+    "npm:react-time@2.4.0": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "moment": "npm:moment@2.9.0",
       "react": "npm:react@0.12.2"
     },
     "npm:react-tools@0.12.2": {
